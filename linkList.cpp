@@ -22,6 +22,19 @@ int LinkList::find(const int& num){
         return -1;
 }
 
+std::ostream& operator<<(std::ostream& out,const LinkList& linkList){
+    for(vector<int>::size_type i=0;i!=linkList.node.size();i++){
+        if(i!=linkList.node.size()-1){
+            out<<linkList.node[i]<<" ";
+        }
+        else{
+            out<<linkList.node[i];
+        }
+    }
+    out<<endl;
+    return out;
+}
+
 void LinkList::deleteByIndex(const int& index){
     if(index<0||index>listLength()){
         cout<<"wrong index"<<endl;

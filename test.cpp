@@ -3,6 +3,7 @@
 
 int main(){
     LinkList L(3,2,6,7);
+    cout<<L<<endl;
     L.print();
     L.insert(0,3);
     L.insert(0,4);
