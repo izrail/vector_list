@@ -1,3 +1,3 @@
 run:
 	rm -rf test
-	g++ test.cpp linkList.cpp -o test
+	g++  linkList.cpp test.cpp -o test

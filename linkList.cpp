@@ -3,7 +3,8 @@
 #include<cstdarg>
 using namespace std;
 
-LinkList::LinkList(int num,...){
+template<typename T>
+LinkList<T>::LinkList(int num,...){
     va_list valist;
     double sum=0.0;
     int i;
@@ -13,7 +14,9 @@ LinkList::LinkList(int num,...){
     }
     va_end(valist);
 }
-int LinkList::find(const int& num){
+
+template<typename T>
+T LinkList<T>::find(const T& num){
     for(vector<int>::size_type i=0;i!=node.size();i++){
         if(node[i]==num){
             return i;
@@ -22,7 +25,8 @@ int LinkList::find(const int& num){
         return -1;
 }
 
-std::ostream& operator<<(std::ostream& out,const LinkList& linkList){
+template<typename L>
+std::ostream& operator<<(std::ostream& out,const LinkList<L>& linkList){
     for(vector<int>::size_type i=0;i!=linkList.node.size();i++){
         if(i!=linkList.node.size()-1){
             out<<linkList.node[i]<<" ";
@@ -31,11 +35,11 @@ std::ostream& operator<<(std::ostream& out,const LinkList& linkList){
             out<<linkList.node[i];
         }
     }
-    out<<endl;
     return out;
 }
 
-void LinkList::deleteByIndex(const int& index){
+template<typename T>
+void LinkList<T>::deleteByIndex(const int& index){
     if(index<0||index>listLength()){
         cout<<"wrong index"<<endl;
     }
@@ -49,7 +53,8 @@ void LinkList::deleteByIndex(const int& index){
     }
 }
 
-void LinkList::print(){
+template<typename T>
+void LinkList<T>::print(){
     for(vector<int>::size_type i=0;i!=node.size();i++){
         if(i!=node.size()-1){
             cout<<node[i]<<" ";
@@ -61,7 +66,8 @@ void LinkList::print(){
     cout<<endl;
 }
 
-void LinkList::insert(const int& index,const int& num){
+template<typename T>
+void LinkList<T>::insert(const int& index,const T& num){
     if(index<0||index>listLength()){
         std::cout<<"wrong index"<<std::endl;
     }

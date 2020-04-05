@@ -3,15 +3,19 @@
 #include<vector>
 #include<iostream>
 using namespace std;
+
+template<typename T>
 class LinkList{
     public:
         LinkList(){}
         LinkList(int num,...);
-        int find(const int& num);
+        T find(const T& num);
         void deleteByIndex(const int& index);
         void print();
-        void insert(const int& index,const int& num);
-        friend ostream& operator <<(ostream& out,const LinkList& linkList);
+        void insert(const int& index,const T& num);
+
+        template<typename L>
+        friend ostream& operator <<(ostream& out,const LinkList<L>& linkList);
 
 
         int listLength()const{
@@ -19,7 +23,7 @@ class LinkList{
         }
 
     private:
-       vector<int> node; 
+       vector<T> node; 
 
 };
 #endif
