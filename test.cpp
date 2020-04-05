@@ -2,7 +2,8 @@
 #include"linkList.hpp"
 #include"linkList.cpp"
 int main(){
-    LinkList <int>L (3,2,6,7);
+    //第一个3,代表初始化长度。
+    LinkList <int>L(3,2,6,7);
     //LinkList <int> L;
     cout<<L<<endl;
     L.insert(0,3);

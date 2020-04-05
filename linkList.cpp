@@ -28,7 +28,9 @@ T LinkList<T>::find(const T& num){
 template<typename L>
 std::ostream& operator<<(std::ostream& out,const LinkList<L>& linkList){
     for(vector<int>::size_type i=0;i!=linkList.node.size();i++){
+        cout<<"before if"<<linkList.node.size()<<endl;
         if(i!=linkList.node.size()-1){
+        cout<<"after if"<<linkList.node.size()<<endl;
             out<<linkList.node[i]<<" ";
         }
         else{
